@@ -1,0 +1,42 @@
+doctype html 
+head 
+    title Chat App 
+    link(rel="stylesheet", href="/components/bootstrap/dist/css/bootstrap.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js")
+    script(src="/components/bootstrap/dist/js/bootstrap.js")
+    script(src="/js/main.js")
+    script(src="https://cdn.socket.io/4.5.4/socket.io.min.js")
+    link(rel="stylesheet",href="/css/style.css")
+body
+    nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link.active(href='/') ChatApp
+        li.nav-item
+          a.nav-link(href='/about') About
+    .container
+        .row  
+            .col-md-8 
+                #error 
+                #userFormwrap 
+                    h1 Create Username
+                    form#userForm
+                        input#username.form-control(type="text",placeholder="Enter Username...")
+                        br
+                        button.btn.btn-danger(type="submit") submit
+                        br
+                #mainWrap 
+                    h1 Speak Your mind 
+                    form#chatForm
+                        .form-group 
+                        textarea#chatInput.form-control(name="body",placeholder="say Something..")
+                        br
+                        button.btn.btn-danger(type="submit") submit 
+                        br
+                        br
+                    #chatWindow.Well   
+    
+            .col-md-4 
+                h3 Chat Users 
+                ul.list-group 
+                    #users              
